@@ -7,6 +7,8 @@
 //
 
 #import "HTTPService.h"
+#define URL_BASE "http://localhost:6069"
+#define URL_COURSES "/courses"
 
 @implementation HTTPService
 
@@ -23,6 +25,29 @@
         }
     }
     return sharedInstance;
+}
+
+- (void) getCourses: (nullable onComplete)completionHandler {
+    NSURL* url = [NSURL URLWithString:[NSString stringWithFormat:@"%s%s", URL_BASE, URL_COURSES]];
+    NSURLSession *session = [NSURLSession sharedSession];
+    
+    [[session dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        
+        if  (data != nil) {
+            NSError* err;
+            NSDictionary* json = [NSJSONSerialization JSONObjectWithData:data options:0 error:&err];
+            
+            if (err == nil) {
+                completionHandler(json, nil);
+            } else {
+                completionHandler(nil, @"Data is corrupt. Please try again.");
+            }
+        } else {
+            NSLog(@"no data: %@", error.debugDescription );
+            completionHandler(nil, @"Problem connecting to the server ");
+        }
+
+    }] resume];
 }
 
 

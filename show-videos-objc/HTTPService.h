@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 // block syntax: onComplete here is the block name, the second () includes the parameters
-typedef void (^onComplete)(NSDictionary* __nullable dataDict, NSString* __nullable errMessage);
+typedef void (^onComplete)(NSArray* __nullable dataArray, NSString* __nullable errMessage);
 
 @interface HTTPService : NSObject
 

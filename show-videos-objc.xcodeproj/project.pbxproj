@@ -14,6 +14,7 @@
 		6695B6161CEC1EF600DC6A25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6695B6151CEC1EF600DC6A25 /* Assets.xcassets */; };
 		6695B6191CEC1EF600DC6A25 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6695B6171CEC1EF600DC6A25 /* LaunchScreen.storyboard */; };
 		6695B6231CEC206000DC6A25 /* HTTPService.m in Sources */ = {isa = PBXBuildFile; fileRef = 6695B6221CEC206000DC6A25 /* HTTPService.m */; };
+		66DBE4881CEFAAC500FFEF83 /* VideoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 66DBE4871CEFAAC500FFEF83 /* VideoCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,8 @@
 		6695B61A1CEC1EF600DC6A25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6695B6211CEC206000DC6A25 /* HTTPService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPService.h; sourceTree = "<group>"; };
 		6695B6221CEC206000DC6A25 /* HTTPService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPService.m; sourceTree = "<group>"; };
+		66DBE4861CEFAAC500FFEF83 /* VideoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoCell.h; sourceTree = "<group>"; };
+		66DBE4871CEFAAC500FFEF83 /* VideoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				6695B6201CEC204700DC6A25 /* Services */,
+				66DBE4851CEFAA9500FFEF83 /* View */,
 				6695B60C1CEC1EF600DC6A25 /* AppDelegate.h */,
 				6695B60D1CEC1EF600DC6A25 /* AppDelegate.m */,
 				6695B60F1CEC1EF600DC6A25 /* ViewController.h */,
@@ -90,6 +94,15 @@
 				6695B6221CEC206000DC6A25 /* HTTPService.m */,
 			);
 			name = Services;
+			sourceTree = "<group>";
+		};
+		66DBE4851CEFAA9500FFEF83 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				66DBE4861CEFAAC500FFEF83 /* VideoCell.h */,
+				66DBE4871CEFAAC500FFEF83 /* VideoCell.m */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -164,6 +177,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6695B6111CEC1EF600DC6A25 /* ViewController.m in Sources */,
+				66DBE4881CEFAAC500FFEF83 /* VideoCell.m in Sources */,
 				6695B6231CEC206000DC6A25 /* HTTPService.m in Sources */,
 				6695B60E1CEC1EF600DC6A25 /* AppDelegate.m in Sources */,
 				6695B60B1CEC1EF600DC6A25 /* main.m in Sources */,
@@ -315,6 +329,7 @@
 				6695B61F1CEC1EF600DC6A25 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

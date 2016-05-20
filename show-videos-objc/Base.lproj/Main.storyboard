@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -16,11 +17,100 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pWW-BX-UBu">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="98"/>
+                                <color key="backgroundColor" red="0.92549019610000005" green="0.41568627450000001" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="98" id="AUS-0Z-tO8"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="115" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WpA-q9-HNH">
+                                <rect key="frame" x="20" y="48" width="560" height="532"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="115" id="wFs-FB-KeL" customClass="VideoCell">
+                                        <rect key="frame" x="0.0" y="28" width="560" height="115"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wFs-FB-KeL" id="huh-PD-7tk">
+                                            <rect key="frame" x="0.0" y="0.0" width="560" height="115"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gR0-cr-iSV">
+                                                    <rect key="frame" x="0.0" y="8" width="560" height="98.5"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NIU-2g-OLe">
+                                                            <rect key="frame" x="8" y="9" width="144" height="81"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="144" id="OIQ-cq-IpH"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1. Course Overview and iOS9 introduction" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g7G-m1-P6G">
+                                                            <rect key="frame" x="160" y="9" width="392" height="36"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="36" id="6lm-gJ-yaP"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                                            <color key="textColor" red="0.36078431370000003" green="0.37647058820000001" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stanford - Developing iOS 9 Apps with Swift" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x2o-vz-idf">
+                                                            <rect key="frame" x="164" y="52" width="388" height="33"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                            <color key="textColor" red="0.36078431370000003" green="0.37647058820000001" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="x2o-vz-idf" secondAttribute="trailing" constant="8" id="0Yn-gx-zHU"/>
+                                                        <constraint firstItem="NIU-2g-OLe" firstAttribute="leading" secondItem="gR0-cr-iSV" secondAttribute="leading" constant="8" id="0uQ-Sd-kvB"/>
+                                                        <constraint firstItem="x2o-vz-idf" firstAttribute="top" secondItem="g7G-m1-P6G" secondAttribute="bottom" constant="7" id="1iU-vS-Bj2"/>
+                                                        <constraint firstItem="g7G-m1-P6G" firstAttribute="leading" secondItem="NIU-2g-OLe" secondAttribute="trailing" constant="8" id="Fkf-No-k8w"/>
+                                                        <constraint firstItem="x2o-vz-idf" firstAttribute="leading" secondItem="NIU-2g-OLe" secondAttribute="trailing" constant="12" id="IK3-Sj-zLd"/>
+                                                        <constraint firstItem="NIU-2g-OLe" firstAttribute="top" secondItem="gR0-cr-iSV" secondAttribute="top" constant="9" id="LBB-iV-3A0"/>
+                                                        <constraint firstAttribute="bottom" secondItem="x2o-vz-idf" secondAttribute="bottom" constant="13.5" id="NIs-Yz-PP8"/>
+                                                        <constraint firstAttribute="bottom" secondItem="NIU-2g-OLe" secondAttribute="bottom" constant="8.5" id="env-ZJ-Ejo"/>
+                                                        <constraint firstItem="g7G-m1-P6G" firstAttribute="top" secondItem="gR0-cr-iSV" secondAttribute="top" constant="9" id="kpv-BO-Tbu"/>
+                                                        <constraint firstAttribute="trailing" secondItem="g7G-m1-P6G" secondAttribute="trailing" constant="8" id="rcI-If-Ogc"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstItem="gR0-cr-iSV" firstAttribute="top" secondItem="huh-PD-7tk" secondAttribute="top" constant="8" id="7sA-sp-1Im"/>
+                                                <constraint firstAttribute="trailing" secondItem="gR0-cr-iSV" secondAttribute="trailing" id="Dv7-lj-1FD"/>
+                                                <constraint firstAttribute="bottom" secondItem="gR0-cr-iSV" secondAttribute="bottom" constant="8" id="JCk-T4-YpO"/>
+                                                <constraint firstItem="gR0-cr-iSV" firstAttribute="leading" secondItem="huh-PD-7tk" secondAttribute="leading" id="ig7-Qv-QFc"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="cellView" destination="gR0-cr-iSV" id="eeu-wt-OqX"/>
+                                            <outlet property="descLbl" destination="x2o-vz-idf" id="Vqw-KE-aPN"/>
+                                            <outlet property="thumbImg" destination="NIU-2g-OLe" id="uJt-ff-MiC"/>
+                                            <outlet property="titleLbl" destination="g7G-m1-P6G" id="e6K-J6-uKY"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="WpA-q9-HNH" secondAttribute="bottom" constant="20" id="1qe-rk-NrE"/>
+                            <constraint firstItem="pWW-BX-UBu" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="8Rn-TR-xJC"/>
+                            <constraint firstItem="pWW-BX-UBu" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="FEk-In-yqz"/>
+                            <constraint firstItem="WpA-q9-HNH" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="28" id="S0b-5d-84m"/>
+                            <constraint firstItem="WpA-q9-HNH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="hUh-EP-7D3"/>
+                            <constraint firstAttribute="trailing" secondItem="pWW-BX-UBu" secondAttribute="trailing" id="teW-LY-g7W"/>
+                            <constraint firstItem="WpA-q9-HNH" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="ynR-jx-3x7"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="404" y="193"/>
         </scene>
     </scenes>
 </document>

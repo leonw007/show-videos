@@ -107,6 +107,9 @@
                             <constraint firstItem="WpA-q9-HNH" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="ynR-jx-3x7"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="WpA-q9-HNH" id="Lyr-04-r93"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

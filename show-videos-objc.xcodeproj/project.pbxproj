@@ -13,6 +13,7 @@
 		6695B6141CEC1EF600DC6A25 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6695B6121CEC1EF600DC6A25 /* Main.storyboard */; };
 		6695B6161CEC1EF600DC6A25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6695B6151CEC1EF600DC6A25 /* Assets.xcassets */; };
 		6695B6191CEC1EF600DC6A25 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6695B6171CEC1EF600DC6A25 /* LaunchScreen.storyboard */; };
+		6695B6231CEC206000DC6A25 /* HTTPService.m in Sources */ = {isa = PBXBuildFile; fileRef = 6695B6221CEC206000DC6A25 /* HTTPService.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		6695B6151CEC1EF600DC6A25 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6695B6181CEC1EF600DC6A25 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6695B61A1CEC1EF600DC6A25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6695B6211CEC206000DC6A25 /* HTTPService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPService.h; sourceTree = "<group>"; };
+		6695B6221CEC206000DC6A25 /* HTTPService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPService.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +61,7 @@
 		6695B6081CEC1EF600DC6A25 /* show-videos-objc */ = {
 			isa = PBXGroup;
 			children = (
+				6695B6201CEC204700DC6A25 /* Services */,
 				6695B60C1CEC1EF600DC6A25 /* AppDelegate.h */,
 				6695B60D1CEC1EF600DC6A25 /* AppDelegate.m */,
 				6695B60F1CEC1EF600DC6A25 /* ViewController.h */,
@@ -77,6 +81,15 @@
 				6695B60A1CEC1EF600DC6A25 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6695B6201CEC204700DC6A25 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				6695B6211CEC206000DC6A25 /* HTTPService.h */,
+				6695B6221CEC206000DC6A25 /* HTTPService.m */,
+			);
+			name = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,6 +164,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6695B6111CEC1EF600DC6A25 /* ViewController.m in Sources */,
+				6695B6231CEC206000DC6A25 /* HTTPService.m in Sources */,
 				6695B60E1CEC1EF600DC6A25 /* AppDelegate.m in Sources */,
 				6695B60B1CEC1EF600DC6A25 /* main.m in Sources */,
 			);

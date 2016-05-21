@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+// import statement brings everything in, which takes more space.
+// @class just let us be able to define this class here.
+@class Video;
 
 @interface VideoCell : UITableViewCell
+-(void)updateUI: (nonnull Video*) video;
 
 @end

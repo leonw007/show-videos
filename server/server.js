@@ -16,6 +16,7 @@ var courses = [
 	{
 		id: 1,
 		title: "1. Course Overview and iOS9 introduction",
+		courseName: "Stanford - Developing iOS 9 Apps with Swift",
 		iframe: '<iframe width="560" height="315" src="https://www.youtube.com/embed/_lRx1zoriPo?list=PLsJq-VuSo2k26duIWzNjXztkZ7VrbppkT" frameborder="0" allowfullscreen></iframe>',
 		thumbnail: "https://d9tyu2epg3boq.cloudfront.net/institutions/stanford.png"
 	}

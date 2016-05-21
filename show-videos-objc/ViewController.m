@@ -8,9 +8,12 @@
 
 #import "ViewController.h"
 #import "HTTPService.h"
+#import "Video.h"
+#import "VideoCell.h"
 
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic, strong) NSArray *videoList;
 
 @end
 
@@ -23,8 +26,24 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
+    self.videoList = [[NSArray alloc] init];
+    
     [[HTTPService instance] getCourses:^(NSArray * _Nullable dataArray, NSString * _Nullable errMessage) {
         if (dataArray){
+            NSMutableArray* arr = [[NSMutableArray alloc] init];
+            // assign every filed in the dict to a new object, then add this object to video list array
+            for (NSDictionary* dict in dataArray) {
+                Video* video = [[Video alloc]init];
+                video.videoTitle = [dict objectForKey:@"title"];
+                video.videoCourseName = [dict objectForKey:@"courseName"];
+                video.videoIframe = [dict objectForKey:@"iframe"];
+                video.videoThumbnailUrl = [dict objectForKey:@"thumbnail"];
+
+                [arr addObject:video];
+            }
+            // assign a NSMutableArray to NSArray
+            self.videoList = arr;
+            [self updateTableData];
             
         } else if (errMessage) {
             //display alert to the user.
@@ -32,8 +51,20 @@
     }];
 }
 
+-(void) updateTableData {
+    // grab the main thread and update the data
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.tableView reloadData];
+    });
+}
+
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return nil;
+    //This function sets what data you want to show in a specific new cell
+    VideoCell* cell = (VideoCell *) [tableView dequeueReusableCellWithIdentifier:@"main"];
+    if (!cell) {
+        cell = [[VideoCell alloc] init];
+    }
+    return cell;
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -45,11 +76,11 @@
 }
 
 - (NSInteger) numberOfSectionsInTableView:(UITableView *)tableView {
-    return 0;
+    return 1;
 }
 
 - (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 0;
+    return self.videoList.count;
 }
 
 
